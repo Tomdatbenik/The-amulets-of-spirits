@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu]
 
-public class Speed : Property
+public class Attack : Property
 {
-   //Nothing the base class covers the function.
+    //Attack power base stat
 }

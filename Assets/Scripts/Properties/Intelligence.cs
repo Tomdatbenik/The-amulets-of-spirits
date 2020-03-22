@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu]
 
-public class Speed : Property
+public class Intelligence : Property
 {
-   //Nothing the base class covers the function.
+
 }

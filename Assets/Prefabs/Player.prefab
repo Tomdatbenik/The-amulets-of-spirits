@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 612334613596256075}
   - component: {fileID: 612334613596256070}
   - component: {fileID: 612334613596256069}
-  - component: {fileID: 612334613596256068}
+  - component: {fileID: 4517417051770200624}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -116,9 +116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f44c3e26cf1d4f349887b3aeb67968ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {fileID: 612334613596256068}
+  speed: {fileID: 11400000, guid: dc641070275073642ad6cf21bf47af78, type: 2}
   rb: {fileID: 612334613596256070}
---- !u!114 &612334613596256068
+--- !u!114 &4517417051770200624
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,7 +127,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 612334613596256073}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b85420a35333954a91ee42d9079fbb9, type: 3}
+  m_Script: {fileID: 11500000, guid: 8df43f756768e0b418830de65a7f66ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  propertyValue: 5
+  speed: {fileID: 11400000, guid: dc641070275073642ad6cf21bf47af78, type: 2}
+  health: {fileID: 11400000, guid: 612846aa8c4b9fa428ddcf5feed1ca85, type: 2}
+  defence: {fileID: 11400000, guid: 27f0ecf4fdc7b1b4796749065bb480ed, type: 2}
+  attack: {fileID: 11400000, guid: bccea72e49456c3468f71a088f7d775e, type: 2}
+  modifiers:
+  - {fileID: 11400000, guid: bd9374f69040a2b4290949c559799d54, type: 2}

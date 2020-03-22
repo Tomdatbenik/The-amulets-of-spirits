@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu]
 
-public class Speed : Property
+public class Buff : Modifier
 {
-   //Nothing the base class covers the function.
+   
 }
