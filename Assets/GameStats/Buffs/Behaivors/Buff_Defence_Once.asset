@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Buff_Defence_Once
   Description: Increases the defence once
-  ActOnce: 0
+  ActOnce: 1
   FinishedActing: 0
-  ActMultipleTimes: 000000004b000000
+  ActMultipleTimes: 
   Duration: 5
   IncreaseAmount: 5
   DecreaseAmount: 0
