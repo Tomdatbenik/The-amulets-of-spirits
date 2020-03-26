@@ -6751,7 +6751,7 @@ MonoBehaviour:
         m_MethodName: AddModifier
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: bd9374f69040a2b4290949c559799d54,
+          m_ObjectArgument: {fileID: 11400000, guid: 5a18d5fb6b1c45c4db1f34d7247eea2b,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: Modifier, Assembly-CSharp
           m_IntArgument: 0

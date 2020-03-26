@@ -10,10 +10,6 @@ public abstract class Modifier : ScriptableObject
     public string Description;
     #endregion
 
-    #region duration
-    public float Duration;
-    #endregion
-
     #region property
     //public PropertyType PropertyType;
     public Property property;
