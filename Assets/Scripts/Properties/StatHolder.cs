@@ -56,6 +56,11 @@ public class StatHolder : MonoBehaviour
             {
                 newModifier.property = property;
                 property.ApplyModifier(newModifier);
+
+                foreach(ModifierBehaivor behaivor in newModifier.Behaivors)
+                {
+                    behaivor.AffectedProperty = property;
+                }
             }
         }
     }

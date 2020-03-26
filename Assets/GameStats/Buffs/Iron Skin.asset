@@ -16,7 +16,7 @@ MonoBehaviour:
   Description: 
   Duration: 5
   property: {fileID: 11400000, guid: 7e31e28c26cfa7944816ef70662350ac, type: 2}
-  ModifyAmount: 5
-  Modifiertype: 0
   Acted: 0
   FinishedActing: 0
+  Behaivors:
+  - {fileID: 11400000, guid: 5105cb4654ba1a644bbdda910f1cc4fd, type: 2}

@@ -12,14 +12,11 @@ public abstract class Modifier : ScriptableObject
 
     #region duration
     public float Duration;
-    private float EndTime;
     #endregion
 
     #region property
     //public PropertyType PropertyType;
     public Property property;
-    public int ModifyAmount;
-    public ModifierType Modifiertype;
     #endregion
 
     #region Affect
@@ -28,52 +25,52 @@ public abstract class Modifier : ScriptableObject
     public bool FinishedActing = false;
     #endregion
 
+    public List<ModifierBehaivor> Behaivors;
+    private List<ModifierBehaivor> BehaivorsClones = new List<ModifierBehaivor>();
+
     //Insert behaivor stuff
     public void Act()
     {
+        if(!Acted)
+        {
+            Acted = true;
+
+            foreach (ModifierBehaivor behaivor in Behaivors)
+            {
+                ModifierBehaivor ClonedBehaiver = Instantiate(behaivor);
+
+                BehaivorsClones.Add(ClonedBehaiver);
+            }
+        }
+
+
         InAffect = true;
 
         if (InAffect)
         {
-            if (!Acted)
+            foreach (ModifierBehaivor behaivor in BehaivorsClones)
             {
-                EndTime = Time.time + Duration;
-                Acted = true;
-
-                if (Modifiertype == ModifierType.BUFF)
-                {
-                    property.Increase(ModifyAmount);
-                }
-                else
-                {
-                    property.Decrease(ModifyAmount);
-                }
-                Debug.Log("Acted " + name);
+                behaivor.Act();
             }
-            CheckIfEnded();
+
+            CheckAndSetEnded();
         }
     }
 
-    public void StopAffect()
+    protected void CheckAndSetEnded()
     {
-        if (Modifiertype == ModifierType.BUFF)
+        bool ended = true;
+        foreach(ModifierBehaivor behaivor in BehaivorsClones)
         {
-            property.Decrease(ModifyAmount);
+            if(!behaivor.FinishedActing)
+            {
+                ended = false;
+            }
         }
-        else
-        {
-            property.Increase(ModifyAmount);
-        }
-    }
 
-    protected void CheckIfEnded()
-    {
-        if(Time.time > EndTime)
+        if(ended)
         {
-            Debug.Log("Ended");
             FinishedActing = true;
-
-            StopAffect();
         }
     }
 }
