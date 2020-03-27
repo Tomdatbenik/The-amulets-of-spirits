@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Iron skin
   Description: 
-  Duration: 5
+  effect: {fileID: 1429195087907998748, guid: 006e86996fc4e9444a78bc36a02567f5, type: 3}
   property: {fileID: 11400000, guid: 7e31e28c26cfa7944816ef70662350ac, type: 2}
   Acted: 0
   FinishedActing: 0

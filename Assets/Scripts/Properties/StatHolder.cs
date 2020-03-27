@@ -5,6 +5,7 @@ using UnityEngine;
 public class StatHolder : MonoBehaviour
 {
     public List<Property> properties = new List<Property>();
+    public GameObject EffectObject;
 
     private void FixedUpdate()
     {
@@ -38,6 +39,11 @@ public class StatHolder : MonoBehaviour
 
                 if (modifier.FinishedActing)
                 {
+                    if(modifier.effect != null)
+                    {
+                        Destroy(modifier.effect);
+                    }
+               
                     Destroy(modifier);
 
                     property.RemoveModifier(modifier);
@@ -54,6 +60,11 @@ public class StatHolder : MonoBehaviour
         {
             if(newModifier.property.GetType() == property.GetType())
             {
+                if(newModifier.effect != null)
+                {
+                    newModifier.effect = Instantiate(modifier.effect, EffectObject.transform);
+                }
+
                 newModifier.property = property;
                 property.ApplyModifier(newModifier);
 

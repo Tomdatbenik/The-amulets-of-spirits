@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Speed over time
   Description: Ats speed every 10%
-  ActOnce: 1
+  ActOnce: 0
   FinishedActing: 0
   ActMultipleTimes: 000000000a000000140000001e00000028000000320000003c00000046000000500000005a000000
-  Duration: 0
-  IncreaseAmount: 2
+  Duration: 10
+  IncreaseAmount: 1
   DecreaseAmount: 0
   ResetWhenFinished: 1
-  AffectedProperty: {fileID: 0}
+  AffectedProperty: {fileID: 11400000, guid: dc641070275073642ad6cf21bf47af78, type: 2}

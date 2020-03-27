@@ -10,6 +10,8 @@ public abstract class Modifier : ScriptableObject
     public string Description;
     #endregion
 
+    public GameObject effect;
+
     #region property
     //public PropertyType PropertyType;
     public Property property;

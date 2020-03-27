@@ -32,7 +32,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1186804071170256902}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -71,9 +72,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -125067491
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: -8818620400143569755, guid: c20a4ac6ceed5e1428ce0d282482cd5b,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -140,6 +141,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 612846aa8c4b9fa428ddcf5feed1ca85, type: 2}
   - {fileID: 11400000, guid: 01f660ce9c923fe4e9be14ce2b31570c, type: 2}
   - {fileID: 11400000, guid: dc641070275073642ad6cf21bf47af78, type: 2}
+  EffectObject: {fileID: 1561928162470928819}
 --- !u!95 &7362055303918229586
 Animator:
   serializedVersion: 3
@@ -185,3 +187,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1, y: 1.65}
   m_EdgeRadius: 0
+--- !u!1 &1561928162470928819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1186804071170256902}
+  m_Layer: 0
+  m_Name: ModifyEffects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1186804071170256902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561928162470928819}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 612334613596256074}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
