@@ -23,8 +23,8 @@ public abstract class Modifier : ScriptableObject
     public bool FinishedActing = false;
     #endregion
 
-    public List<ModifierBehaivor> Behaivors;
-    private List<ModifierBehaivor> BehaivorsClones = new List<ModifierBehaivor>();
+    public List<ModifierBehavior> Behaivors;
+    private List<ModifierBehavior> BehaivorsClones = new List<ModifierBehavior>();
 
     //Insert behaivor stuff
     public void Act()
@@ -33,9 +33,9 @@ public abstract class Modifier : ScriptableObject
         {
             Acted = true;
 
-            foreach (ModifierBehaivor behaivor in Behaivors)
+            foreach (ModifierBehavior behaivor in Behaivors)
             {
-                ModifierBehaivor ClonedBehaiver = Instantiate(behaivor);
+                ModifierBehavior ClonedBehaiver = Instantiate(behaivor);
 
                 BehaivorsClones.Add(ClonedBehaiver);
             }
@@ -46,7 +46,7 @@ public abstract class Modifier : ScriptableObject
 
         if (InAffect)
         {
-            foreach (ModifierBehaivor behaivor in BehaivorsClones)
+            foreach (ModifierBehavior behaivor in BehaivorsClones)
             {
                 behaivor.Act();
             }
@@ -58,7 +58,7 @@ public abstract class Modifier : ScriptableObject
     protected void CheckAndSetEnded()
     {
         bool ended = true;
-        foreach(ModifierBehaivor behaivor in BehaivorsClones)
+        foreach(ModifierBehavior behaivor in BehaivorsClones)
         {
             if(!behaivor.FinishedActing)
             {
@@ -71,4 +71,26 @@ public abstract class Modifier : ScriptableObject
             FinishedActing = true;
         }
     }
+
+    #region reset_on_unity_editor
+#if UNITY_EDITOR
+    private void OnEnable()
+    {
+        UnityEditor.EditorApplication.playModeStateChanged += EditorApplication_playModeStateChanged;
+    }
+
+    private void OnDisable()
+    {
+        UnityEditor.EditorApplication.playModeStateChanged -= EditorApplication_playModeStateChanged;
+    }
+
+    private void EditorApplication_playModeStateChanged(UnityEditor.PlayModeStateChange state)
+    {
+        if (state == UnityEditor.PlayModeStateChange.EnteredEditMode || state == UnityEditor.PlayModeStateChange.EnteredPlayMode)
+        {
+            BehaivorsClones.Clear();
+        }
+    }
+#endif
+    #endregion
 }

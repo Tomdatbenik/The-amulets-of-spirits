@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu]
 
-public class ModifierBehaivor : ScriptableObject
+public class ModifierBehavior : ScriptableObject
 {
     public string Name;
     public string Description;
@@ -92,7 +92,6 @@ public class ModifierBehaivor : ScriptableObject
     {
         if (Time.time > EndTime)
         {
-            Debug.Log("Ended");
             FinishedActing = true;
             if(ResetWhenFinished)
             {

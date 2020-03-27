@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Swift feet
   Description: Adds 2 speed every 1 sec
-  effect: {fileID: 5201948071018470210, guid: d9c97f5be7706434eafc6c6628380917, type: 3}
+  effect: {fileID: 1326721906119135104, guid: 7b342dd5a42ab7a4eb94a026f035fdb3, type: 3}
   property: {fileID: 11400000, guid: 973bc0ccef76a6746adb31d678b08e9f, type: 2}
   Acted: 0
   FinishedActing: 0
