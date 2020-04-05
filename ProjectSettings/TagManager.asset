@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Doors
+  - LeftDoor
+  - TopDoor
+  - BottomDoor
+  - RightDoor
   layers:
   - Default
   - TransparentFX
