@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu]
 
-public class Damage : Property
+public enum Direction 
 {
-    ///Damage dealt
+    UP,
+    DOWN,
+    LEFT,
+    RIGHT,
+    NONE
 }

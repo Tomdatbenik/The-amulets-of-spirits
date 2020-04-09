@@ -6,6 +6,7 @@ public abstract class Property : ScriptableObject
 {
     public int Value;
     public int baseValue;
+    public bool isState;
 
     public List<Modifier> Modifiers = new List<Modifier>();
 

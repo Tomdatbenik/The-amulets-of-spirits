@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c2b9c18d2fcf53468249734eff81039, type: 3}
-  m_Name: Player_Health
+  m_Script: {fileID: 11500000, guid: 821d534d166a1d046882f657cf986d4c, type: 3}
+  m_Name: BaseAttackDamage
   m_EditorClassIdentifier: 
-  Value: 100
-  baseValue: 100
-  isState: 1
+  Value: 1
+  baseValue: 1
   Modifiers: []
-  defence: {fileID: 0}

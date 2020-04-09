@@ -19,7 +19,10 @@ public class StatHolder : MonoBehaviour
         {
             if(property.Modifiers.Count == 0)
             {
-                property.RestoreBackToInit();
+                if(!property.isState)
+                {
+                    property.RestoreBackToInit();
+                }
             }
 
             foreach(Modifier modifier in property.Modifiers)

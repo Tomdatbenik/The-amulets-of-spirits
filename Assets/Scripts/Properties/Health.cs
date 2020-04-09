@@ -33,8 +33,13 @@ public class Health : Property
     //May delight one of the methods later on
     public void ApplyDamage(Damage damage)
     {
+        int dmg = damage.Value;
         ///Might balance this with with defence devided by 75% or something
-        int dmg = damage.Value - defence.Value;
+        if (defence != null)
+        {
+            dmg = damage.Value - defence.Value;
+        }
+    
 
         if(dmg <= 0)
         {
@@ -47,7 +52,12 @@ public class Health : Property
     public void ApplyDamage(int damage)
     {
         ///Might balance this with with defence devided by 75% or something
-        int dmg = damage - defence.Value;
+        int dmg = damage;
+        ///Might balance this with with defence devided by 75% or something
+        if (defence != null)
+        {
+            dmg = damage - defence.Value;
+        }
 
         if (dmg <= 0)
         {
@@ -60,8 +70,12 @@ public class Health : Property
     public void ApplyDamage(Attack attack)
     {
         ///Might balance this with with defence devided by 75% or something
-        int dmg = attack.Value - defence.Value;
+        int dmg = attack.Value;
 
+        if (defence != null)
+        {
+            dmg = attack.Value - defence.Value;
+        }
         if (dmg <= 0)
         {
             dmg = 1;
