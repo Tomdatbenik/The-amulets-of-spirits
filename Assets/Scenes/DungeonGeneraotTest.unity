@@ -207,7 +207,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -410,7 +410,7 @@ MonoBehaviour:
   m_Follow: {fileID: 341275304}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 5
+    OrthographicSize: 10
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -560,7 +560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f939805568fc6438de28823edd7bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dungeonSize: 20
+  dungeonSize: 500
   SpaceBetweenRooms: 50
   startRoom: {fileID: 11400000, guid: 8f1f11a08c0e4304282ea47ad8df06d5, type: 2}
   BossRoom: {fileID: 11400000, guid: 3fd8076716a547149b6065793a87a3ae, type: 2}

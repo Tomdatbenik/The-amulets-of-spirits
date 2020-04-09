@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f95eb015e002ac54689b0c433af399b6, type: 3}
+  m_Name: Regenerate
+  m_EditorClassIdentifier: 
+  Name: 
+  Description: 
+  effect: {fileID: 0}
+  property: {fileID: 11400000, guid: 6cc6a08500ccc064695a52e3ca1f4eb6, type: 2}
+  Acted: 0
+  FinishedActing: 0
+  Behaivors:
+  - {fileID: 11400000, guid: ae09bb9f9b5c9b9428c9e56586934025, type: 2}

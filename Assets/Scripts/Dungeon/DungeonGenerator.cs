@@ -36,16 +36,16 @@ public class DungeonGenerator : MonoBehaviour
         grid.spaces[grid.spaces.Count - 1].dungeonRoom = Instantiate(BossRoom);
 
 
-        foreach (GridSpace space in grid.spaces)
-        {
-            Debug.Log("postition: x: " + space.position.x + " y: " + space.position.y);
+        //foreach (GridSpace space in grid.spaces)
+        //{
+        //    Debug.Log("postition: x: " + space.position.x + " y: " + space.position.y);
 
-            SpawnRoom(space);
+        //    SpawnRoom(space);
 
-            space.dungeonRoom.Room.transform.position = new Vector2(space.position.x * SpaceBetweenRooms, space.position.y * SpaceBetweenRooms);
-        }
+        //    space.dungeonRoom.Room.transform.position = new Vector2(space.position.x * SpaceBetweenRooms, space.position.y * SpaceBetweenRooms);
+        //}
 
-        SpawnDoors();
+        //SpawnDoors();
     }
 
     private void SpawnRoom(GridSpace space)
@@ -62,29 +62,27 @@ public class DungeonGenerator : MonoBehaviour
 
     private void Update()
     {
-        
-        //if (index != grid.spaces.Count)
-        //{
-        //    GridSpace gridSpace = grid.spaces[index];
 
-        //    SpawnRoom(gridSpace);
+        if (index != grid.spaces.Count)
+        {
+            GridSpace gridSpace = grid.spaces[index];
 
-        //    index++;
-        //}
-        //else if (index == grid.spaces.Count && !DoorSpawned)
-        //{
-        //    DoorSpawned = true;
-        //    SpawnDoors();
-        //}
-        
+            SpawnRoom(gridSpace);
+
+            index++;
+        }
+        else if (index == grid.spaces.Count && !DoorSpawned)
+        {
+            DoorSpawned = true;
+            SpawnDoors();
+        }
+
     }
 
     private void SpawnDoors()
     {
         foreach (GridSpace space in grid.spaces)
         {
-            Debug.Log(space.dungeonRoom.Room);
-
             RoomSettings settings = space.dungeonRoom.Room.GetComponent<RoomSettings>();
 
             List<GridSpace> spaces = grid.GetAdjecentSpacesWithRoomFromSpace(space);
