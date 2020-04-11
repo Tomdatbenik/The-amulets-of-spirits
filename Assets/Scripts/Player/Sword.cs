@@ -5,18 +5,45 @@ using UnityEngine;
 public class Sword : MonoBehaviour
 {
     public GameObject wielder;
-    public Rigidbody2D rb;
+    public float speed;
 
-    private Vector2 LastRotation;
+    public Vector2 startMarker;
+    public Vector2 endMarker;
 
-    void Update()
+    // Time when the movement started.
+    private float startTime;
+
+    // Total distance between the markers.
+    private float journeyLength;
+
+
+    private void Awake()
     {
-        Vector3 Direction = wielder.transform.position - transform.position;
-        float angle = Mathf.Atan2(Direction.y, Direction.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
+        wielder = GameObject.FindGameObjectWithTag("Player");
+        startMarker = new Vector2(wielder.transform.position.x, wielder.transform.position.y);
+        endMarker = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    }
 
-        Vector2 DirectionFloats = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+    private void Start()
+    {
+        // Keep a note of the time the movement started.
+        startTime = Time.time;
 
-        rb.MovePosition(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        // Calculate the journey length.
+        journeyLength = Vector3.Distance(startMarker, endMarker);
+
+        //transform.right = wielder.transform.position - transform.position;
+    }
+
+    private void Update()
+    {
+        // Distance moved equals elapsed time times speed..
+        float distCovered = (Time.time - startTime) * speed;
+
+        // Fraction of journey completed equals current distance divided by total distance.
+        float fractionOfJourney = distCovered / journeyLength;
+
+        // Set our position as a fraction of the distance between the markers.
+        transform.position = Vector2.Lerp(startMarker, endMarker, fractionOfJourney);
     }
 }

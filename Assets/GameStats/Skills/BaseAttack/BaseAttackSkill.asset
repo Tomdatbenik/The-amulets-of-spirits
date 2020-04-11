@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviors:
   - {fileID: 11400000, guid: 2ff6688571d2ca6489b5f8756ff236a9, type: 2}
-  Cooldown: 1
+  behaviorsCopy: []
+  Cooldown: 0.5
   onCooldown: 0
   TargetPosition: {x: 0, y: 0}
   Caster: {fileID: 0}

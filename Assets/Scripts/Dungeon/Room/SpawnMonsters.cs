@@ -10,7 +10,8 @@ public class SpawnMonsters : MonoBehaviour
     private System.Random random = new System.Random();
 
     private bool monstersSpawned = false;
-    private List<Door> openDoors;
+    public List<Transform> SpawnLocations;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(!settings.RoomCleared)
@@ -23,7 +24,8 @@ public class SpawnMonsters : MonoBehaviour
                 for(int i = 0; i < ammountOfMonsters; i++)
                 {
                     GameObject monster = Instantiate(settings.Monsters[random.Next(0, settings.Monsters.Count)], monsterHolder.transform);
-                    monster.transform.position = monsterHolder.transform.position;
+
+                    monster.transform.position = SpawnLocations[random.Next(0, SpawnLocations.Count)].position;
                 }
 
                 settings.RightDoor.Close();
@@ -34,7 +36,7 @@ public class SpawnMonsters : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if(monstersSpawned && !settings.RoomCleared)
         {

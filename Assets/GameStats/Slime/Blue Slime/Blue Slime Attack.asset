@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc47018db59ffbe45bdc7bc07c35846a, type: 3}
-  m_Name: Slime_Defence
+  m_Script: {fileID: 11500000, guid: 0f0b4fa4e6a5ec54cb85bd8aa1f9899d, type: 3}
+  m_Name: Blue Slime Attack
   m_EditorClassIdentifier: 
-  propertyValue: 7
-  baseValue: 7
+  Value: 2
+  baseValue: 2
+  isState: 0
+  Modifiers: []

@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Speed speed;
+    private Speed speed;
+    public StatHolder statHolder;
     public Rigidbody2D rb;
     public Animator animator;
     private Vector2 movement = new Vector2(0, 0);
+
+    private void Start()
+    {
+        speed = statHolder.FindPropertyByName("Speed") as Speed;
+    }
+
     private void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");

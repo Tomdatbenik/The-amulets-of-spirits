@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0b4fa4e6a5ec54cb85bd8aa1f9899d, type: 3}
   m_Name: Player_Attack
   m_EditorClassIdentifier: 
-  propertyValue: 0
-  baseValue: 0
+  Value: 1
+  baseValue: 1
+  isState: 0
+  Modifiers: []

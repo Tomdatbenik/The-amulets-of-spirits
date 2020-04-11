@@ -7,6 +7,35 @@ public class StatHolder : MonoBehaviour
     public List<Property> properties = new List<Property>();
     public GameObject EffectObject;
 
+    private void Awake()
+    {
+        List<Property> propertiesClones = new List<Property>();
+
+        foreach(Property property in properties)
+        {
+            propertiesClones.Add(Instantiate(property));
+        }
+
+        properties.Clear();
+
+        properties = propertiesClones;
+    }
+
+    private void Update()
+    {
+        Health health = FindPropertyByName("Health") as Health;
+
+        if(health.Value == 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    public Property FindPropertyByName(string name)
+    {
+        return properties.Find(p => p.GetType().Name == name);
+    }
+
     private void FixedUpdate()
     {
         ActModifiers();

@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class DamageSkillBehaivor : SkillBehavior
 {
-    public Damage damage;
     public GameObject hitbox;
     GameObject SpawnedHitbox;
     public float offsetOfCaster;
@@ -14,7 +13,7 @@ public class DamageSkillBehaivor : SkillBehavior
     {
         SpawnedHitbox = Instantiate(hitbox);
         HitBoxApplyDamage hitBoxApplyDamage = SpawnedHitbox.GetComponent<HitBoxApplyDamage>();
-        hitBoxApplyDamage.damage = damage;
+        hitBoxApplyDamage.attack = Caster.GetComponent<StatHolder>().FindPropertyByName("Attack") as Attack;
         hitBoxApplyDamage.tags = ApplyToTags;
 
         SetHitBoxPosiition();
@@ -41,6 +40,7 @@ public class DamageSkillBehaivor : SkillBehavior
     {
         if(IsActing)
         {
+            SetHitBoxPosiition();
             if (Time.time > Endtime)
             {
                 IsActing = false;

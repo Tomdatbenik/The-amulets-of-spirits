@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SkillCaster : MonoBehaviour
 {
-    public List<Skill> skills;
     public List<Skill> ActingSkills = new List<Skill>();
 
-    Skill primarySkill;
+    public Skill primarySkill;
+    Skill primarySkillClone;
 
     private void Start()
     {
-        primarySkill = Instantiate(skills[0]);
+        primarySkillClone = Instantiate(primarySkill);
     }
 
     private void Update()
@@ -41,17 +41,20 @@ public class SkillCaster : MonoBehaviour
 
     private void CastPrimarySkill()
     {
-        ActingSkills.Add(primarySkill);
-        primarySkill.Caster = this.gameObject;
-   
-        Vector2 MousePos = transform.TransformPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-        Vector2 test = MousePos;
-        if (Vector3.Distance(MousePos, this.transform.position) > primarySkill.Range)
+        if(!primarySkillClone.onCooldown)
         {
-            test = (MousePos - (Vector2)transform.position).normalized * primarySkill.Range + (Vector2)transform.position;
+            ActingSkills.Add(primarySkillClone);
+            primarySkillClone.Caster = this.gameObject;
+
+            //Vector2 MousePos = transform.TransformPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            //Vector2 test = MousePos;
+            //if (Vector3.Distance(MousePos, this.transform.position) > primarySkillClone.Range)
+            //{
+            //    test = (MousePos - (Vector2)transform.position).normalized * primarySkillClone.Range + (Vector2)transform.position;
+            //}
+
+            primarySkillClone.TargetPosition = new Vector2(transform.position.x, transform.position.y);
+            primarySkillClone.Cast();
         }
-       
-        primarySkill.TargetPosition = test;
-        primarySkill.Cast();
     }
 }

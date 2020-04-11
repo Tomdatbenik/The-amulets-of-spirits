@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HitBoxApplyDamage : MonoBehaviour
 {
-    public Damage damage;
+    public Attack attack;
     public List<string> tags;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -13,11 +13,11 @@ public class HitBoxApplyDamage : MonoBehaviour
         {
             StatHolder statHolder = collision.GetComponent<StatHolder>();
 
-            Health health = statHolder.properties.Find(p => p.GetType().Name == "Health") as Health;
+            Health health = statHolder.FindPropertyByName("Health") as Health;
 
-            if(health != null)
+            if (health != null)
             {
-                health.ApplyDamage(damage);
+                health.ApplyDamage(attack);
             }
         }
     }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class Skill : ScriptableObject
 {
     public List<SkillBehavior> behaviors;
-    private List<SkillBehavior> behaviorsCopy = new List<SkillBehavior>();
+    public List<SkillBehavior> behaviorsCopy = new List<SkillBehavior>();
     public float Cooldown;
     public bool onCooldown;
     public Vector2 TargetPosition;
@@ -65,7 +65,7 @@ public class Skill : ScriptableObject
             if (!behavior.IsActing)
             {
                 behavior.Reset();
-                behaviorsCopy.RemoveAt(i);
+                behaviorsCopy.Clear();
             }
         }
     }
