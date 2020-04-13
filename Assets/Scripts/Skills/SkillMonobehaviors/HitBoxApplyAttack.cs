@@ -17,20 +17,12 @@ public class HitBoxApplyAttack : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (tags.Contains(collision.tag))
-        {
-            StatHolder enemyStatholder = collision.GetComponent<StatHolder>();
-
-            ApplyDamage(enemyStatholder);
-        }
-    }
+   
 
     private void ApplyDamage(StatHolder enemyStatHolder)
     {
         Health health = enemyStatHolder.FindPropertyByName("Health") as Health;
-
+        enemyStatHolder.DisplayDamage(enemyStatHolder.gameObject.GetComponent<SpriteRenderer>());
         if (health != null)
         {
             health.ApplyDamage((Attack)statHolder.FindPropertyByName("Attack"));

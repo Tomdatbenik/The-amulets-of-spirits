@@ -97,6 +97,21 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5403734270549816699, guid: e48816f276a697b4e99a263e94ea62ff,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -125067491
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403734270549816699, guid: e48816f276a697b4e99a263e94ea62ff,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403734270549816699, guid: e48816f276a697b4e99a263e94ea62ff,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6063005369755846726, guid: e48816f276a697b4e99a263e94ea62ff,
         type: 3}
       propertyPath: chargeUp

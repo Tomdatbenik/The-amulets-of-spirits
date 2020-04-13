@@ -12,7 +12,7 @@ public class HitBoxApplyDamage : MonoBehaviour
         if(tags.Contains(collision.tag))
         {
             StatHolder statHolder = collision.GetComponent<StatHolder>();
-
+            statHolder.DisplayDamage(collision.GetComponent<SpriteRenderer>());
             Health health = statHolder.FindPropertyByName("Health") as Health;
 
             if (health != null)

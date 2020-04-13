@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec8158e19c14e7d4e9293f6f8c5d37bc, type: 3}
-  m_Name: Woodland room big
+  m_Script: {fileID: 11500000, guid: 0c2b9c18d2fcf53468249734eff81039, type: 3}
+  m_Name: Boar_Health
   m_EditorClassIdentifier: 
-  Room: {fileID: 7111237881613403697, guid: 7dcc5131540576b4abe67ab0dbc6c0f9, type: 3}
-  Name: 
+  Value: 10
+  baseValue: 10
+  isState: 1
+  Modifiers: []
+  defence: {fileID: 0}

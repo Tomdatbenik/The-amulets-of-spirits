@@ -6,9 +6,11 @@ public class StatHolder : MonoBehaviour
 {
     public List<Property> properties = new List<Property>();
     public GameObject EffectObject;
+    private Color color;
 
     private void Awake()
     {
+        color = gameObject.GetComponent<SpriteRenderer>().color;
         List<Property> propertiesClones = new List<Property>();
 
         foreach(Property property in properties)
@@ -106,5 +108,17 @@ public class StatHolder : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void DisplayDamage(SpriteRenderer renderer)
+    {
+        StartCoroutine(SetAndResetColor(renderer));
+    }
+
+    private IEnumerator SetAndResetColor(SpriteRenderer renderer)
+    {
+        renderer.color = Color.black;
+        yield return new WaitForSeconds(0.01f);
+        renderer.color = color;
     }
 }

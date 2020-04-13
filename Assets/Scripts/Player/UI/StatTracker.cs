@@ -27,9 +27,12 @@ public class StatTracker : MonoBehaviour
 
     public void Update()
     {
-        HealthText.text = "Health: " + health.Value.ToString();
-        DefenceText.text = "Defence: " + defence.Value.ToString();
-        SpeedText.text = "Speed: " + speed.Value.ToString();
-        AttackText.text = "attack: " + attack.Value.ToString();
+        if (HealthText != null)
+        {
+            HealthText.text = "Health: " + health.Value.ToString();
+            DefenceText.text = "Defence: " + defence.Value.ToString();
+            SpeedText.text = "Speed: " + speed.Value.ToString();
+            AttackText.text = "attack: " + attack.Value.ToString();
+        }
     }
 }
