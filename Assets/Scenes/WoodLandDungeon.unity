@@ -222,6 +222,12 @@ PrefabInstance:
       propertyPath: dungeonSize
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 5730252334740576712, guid: 7496bc48392ed654888bbae58572fa00,
+        type: 3}
+      propertyPath: startRoom
+      value: 
+      objectReference: {fileID: 11400000, guid: 32a62fd189f9dd94a9e1ea3224872276,
+        type: 2}
     - target: {fileID: 5730252334740576713, guid: 7496bc48392ed654888bbae58572fa00,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -465,6 +471,11 @@ PrefabInstance:
       propertyPath: AttackText
       value: 
       objectReference: {fileID: 1136700144}
+    - target: {fileID: 5415134330333019886, guid: 5faa9f879d7c7c74e8eca4e4c3abba2e,
+        type: 3}
+      propertyPath: time
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5faa9f879d7c7c74e8eca4e4c3abba2e, type: 3}
 --- !u!4 &618199084 stripped
