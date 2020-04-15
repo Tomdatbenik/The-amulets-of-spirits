@@ -20088,7 +20088,8 @@ MonoBehaviour:
   MaxMonsters: 2
   MinMonsters: 1
   RoomDoorSprite: {fileID: 0}
-  DoorClosed: {fileID: 21300000, guid: 68ac1dfb727ad1a4cbe3b29ff56630ae, type: 3}
+  DoorClosed: {fileID: -4683339530408089196, guid: 13d9f8dd27878654cad3df6789e112d7,
+    type: 3}
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &5605521147439009984
 MonoBehaviour:

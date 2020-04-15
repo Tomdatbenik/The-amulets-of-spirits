@@ -872,10 +872,80 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 34319115599899401, guid: 7dcc5131540576b4abe67ab0dbc6c0f9,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 34319115599899401, guid: 7dcc5131540576b4abe67ab0dbc6c0f9,
+        type: 3}
+      propertyPath: m_UseNormalMap
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 34319115599899401, guid: 7dcc5131540576b4abe67ab0dbc6c0f9,
+        type: 3}
+      propertyPath: m_LightType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 34319115599899401, guid: 7dcc5131540576b4abe67ab0dbc6c0f9,
+        type: 3}
+      propertyPath: m_AlphaBlendOnOverlap
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 34319115599899401, guid: 7dcc5131540576b4abe67ab0dbc6c0f9,
+        type: 3}
+      propertyPath: m_LightCookieSprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 34319115599899401, guid: 7dcc5131540576b4abe67ab0dbc6c0f9,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[1]
+      value: 1422053849
+      objectReference: {fileID: 0}
+    - target: {fileID: 34319115599899401, guid: 7dcc5131540576b4abe67ab0dbc6c0f9,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[2]
+      value: 441408099
+      objectReference: {fileID: 0}
+    - target: {fileID: 34319115599899401, guid: 7dcc5131540576b4abe67ab0dbc6c0f9,
+        type: 3}
+      propertyPath: m_PointLightQuality
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 34319115599899401, guid: 7dcc5131540576b4abe67ab0dbc6c0f9,
+        type: 3}
+      propertyPath: m_BlendStyleIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 34319115599899401, guid: 7dcc5131540576b4abe67ab0dbc6c0f9,
+        type: 3}
+      propertyPath: m_LightOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5246948275199165222, guid: 7dcc5131540576b4abe67ab0dbc6c0f9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 5246948275199165222, guid: 7dcc5131540576b4abe67ab0dbc6c0f9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.43
+      objectReference: {fileID: 0}
     - target: {fileID: 6742795007646592593, guid: 7dcc5131540576b4abe67ab0dbc6c0f9,
         type: 3}
       propertyPath: MinMonsters
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111237881451056679, guid: 7dcc5131540576b4abe67ab0dbc6c0f9,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1422053849
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111237881451056679, guid: 7dcc5131540576b4abe67ab0dbc6c0f9,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7111237881613403662, guid: 7dcc5131540576b4abe67ab0dbc6c0f9,
         type: 3}
@@ -936,6 +1006,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Woodland Monster room 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776214959887900660, guid: 7dcc5131540576b4abe67ab0dbc6c0f9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776214959887900660, guid: 7dcc5131540576b4abe67ab0dbc6c0f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dcc5131540576b4abe67ab0dbc6c0f9, type: 3}
