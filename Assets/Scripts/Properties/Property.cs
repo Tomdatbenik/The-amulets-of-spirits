@@ -6,6 +6,7 @@ public abstract class Property : ScriptableObject
 {
     public int Value;
     public int baseValue;
+    public int runtimeBaseValue;
     public bool isState;
 
     public List<Modifier> Modifiers = new List<Modifier>();
@@ -21,17 +22,18 @@ public abstract class Property : ScriptableObject
 
     public void Increase(int amount)
     {
-        Value += amount;
+         Value += amount;
     }
 
-    public void IncreaseBaseValue(int amount)
+    public void IncreaseRuntimeBaseValue(int amount)
     {
-        baseValue += amount;
+        runtimeBaseValue += amount;
+        Value = runtimeBaseValue;
     }
 
-    public void RestoreBackToInit()
+    public void RestoreBackToRuntimeBaseValue()
     {
-        Value = baseValue;
+        Value = runtimeBaseValue;
     }
 
     public void RemoveModifier(Modifier modifier)
@@ -60,6 +62,7 @@ public abstract class Property : ScriptableObject
     {
         if (state == UnityEditor.PlayModeStateChange.EnteredEditMode || state == UnityEditor.PlayModeStateChange.EnteredPlayMode)
         {
+            runtimeBaseValue = baseValue;
             Value = baseValue;
             Modifiers.Clear();
         }

@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Player_Defence
   m_EditorClassIdentifier: 
   Value: 5
+  MaxValue: 6
   baseValue: 5
+  runtimeBaseValue: 5
+  isState: 0
   Modifiers: []

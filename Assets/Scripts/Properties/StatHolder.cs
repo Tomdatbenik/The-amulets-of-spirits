@@ -7,6 +7,7 @@ public class StatHolder : MonoBehaviour
     public List<Property> properties = new List<Property>();
     public GameObject EffectObject;
     private Color color;
+    public AudioSource audioSource;
 
     private void Awake()
     {
@@ -29,6 +30,10 @@ public class StatHolder : MonoBehaviour
 
         if(health.Value == 0)
         {
+            GameObject gameObject = GameObject.FindGameObjectWithTag("Soundplayer");
+            AudioSource deathsource = gameObject.GetComponent<AudioSource>();
+            deathsource.clip = health.DeathSound;
+            deathsource.Play();
             Destroy(this.gameObject);
         }
     }
@@ -52,7 +57,7 @@ public class StatHolder : MonoBehaviour
             {
                 if(!property.isState)
                 {
-                    property.RestoreBackToInit();
+                    property.RestoreBackToRuntimeBaseValue();
                 }
             }
 

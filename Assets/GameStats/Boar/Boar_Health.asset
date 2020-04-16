@@ -17,3 +17,5 @@ MonoBehaviour:
   isState: 1
   Modifiers: []
   defence: {fileID: 0}
+  DeathSound: {fileID: 8300000, guid: d595fa4f5eb5f3a4794fb2877228926c, type: 3}
+  Hurt: {fileID: 8300000, guid: 2358f9cdcbaac0f4780486743713f49a, type: 3}

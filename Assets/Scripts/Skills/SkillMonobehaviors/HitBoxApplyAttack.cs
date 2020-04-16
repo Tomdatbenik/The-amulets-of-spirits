@@ -6,6 +6,7 @@ public class HitBoxApplyAttack : MonoBehaviour
 {
     public StatHolder statHolder;
     public List<string> tags;
+    public AudioSource audioSource;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,6 +26,12 @@ public class HitBoxApplyAttack : MonoBehaviour
         enemyStatHolder.DisplayDamage(enemyStatHolder.gameObject.GetComponent<SpriteRenderer>());
         if (health != null)
         {
+            if(health.Hurt != null)
+            {
+                audioSource.clip = health.Hurt;
+                audioSource.Play();
+            }
+
             health.ApplyDamage((Attack)statHolder.FindPropertyByName("Attack"));
         }
     }

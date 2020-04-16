@@ -18,7 +18,7 @@ MonoBehaviour:
   FinishedActing: 0
   ActMultipleTimes: 0000000019000000320000004b00000064000000
   Duration: 6
-  IncreaseAmount: 1
+  IncreaseAmount: 5
   DecreaseAmount: 0
   ResetWhenFinished: 0
-  AffectedProperty: {fileID: 11400000, guid: 612846aa8c4b9fa428ddcf5feed1ca85, type: 2}
+  AffectedProperty: {fileID: 11400000, guid: 6cc6a08500ccc064695a52e3ca1f4eb6, type: 2}

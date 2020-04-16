@@ -6,6 +6,8 @@ using UnityEngine;
 public class Health : Property
 {
     public Defence defence;
+    public AudioClip DeathSound;
+    public AudioClip Hurt;
 
     public bool Dead
     {

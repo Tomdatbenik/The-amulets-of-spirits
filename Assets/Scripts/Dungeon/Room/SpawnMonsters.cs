@@ -20,7 +20,7 @@ public class SpawnMonsters : MonoBehaviour
             {
                 monstersSpawned = true;
                 int ammountOfMonsters = random.Next(settings.MinMonsters, settings.MaxMonsters + 1);
-                Debug.Log(ammountOfMonsters);
+
                 for(int i = 0; i < ammountOfMonsters; i++)
                 {
                     GameObject monster = Instantiate(settings.Monsters[random.Next(0, settings.Monsters.Count)], monsterHolder.transform);

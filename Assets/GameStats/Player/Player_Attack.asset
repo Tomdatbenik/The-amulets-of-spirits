@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Player_Attack
   m_EditorClassIdentifier: 
   Value: 1
+  MaxValue: 5
   baseValue: 1
+  runtimeBaseValue: 0
   isState: 0
   Modifiers: []

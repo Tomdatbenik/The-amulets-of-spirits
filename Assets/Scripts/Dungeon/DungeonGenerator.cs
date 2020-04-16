@@ -38,8 +38,6 @@ public class DungeonGenerator : MonoBehaviour
 
         foreach (GridSpace space in grid.spaces)
         {
-            Debug.Log("postition: x: " + space.position.x + " y: " + space.position.y);
-
             SpawnRoom(space);
 
             space.dungeonRoom.Room.transform.position = new Vector2(space.position.x * SpaceBetweenRooms, space.position.y * SpaceBetweenRooms);
@@ -53,8 +51,6 @@ public class DungeonGenerator : MonoBehaviour
         GameObject room = Instantiate(space.dungeonRoom.Room);
         space.dungeonRoom.Room = room;
         space.dungeonRoom.Name = "Randomroom";
-
-        Debug.Log("Spawning");
 
         room.transform.position = new Vector2(space.position.x * SpaceBetweenRooms, space.position.y * SpaceBetweenRooms);
     }

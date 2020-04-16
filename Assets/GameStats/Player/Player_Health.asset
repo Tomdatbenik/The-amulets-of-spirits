@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Player_Health
   m_EditorClassIdentifier: 
   Value: 100
+  MaxValue: 100
   baseValue: 100
+  runtimeBaseValue: 0
   isState: 1
   Modifiers: []
   defence: {fileID: 11400000, guid: 27f0ecf4fdc7b1b4796749065bb480ed, type: 2}
+  DeathSound: {fileID: 8300000, guid: 983859ca1de63a8428f120d7a050c8c1, type: 3}
+  Hurt: {fileID: 8300000, guid: 0762b09ca59d8d34ba5d6ff4d46516b9, type: 3}
