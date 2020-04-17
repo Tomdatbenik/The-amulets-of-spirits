@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossTrigger : MonoBehaviour
 {
     public bool PlayerInTrigger;
+    public BossAttack bossAttack;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c2b9c18d2fcf53468249734eff81039, type: 3}
   m_Name: Boss health
   m_EditorClassIdentifier: 
-  Value: 100
-  baseValue: 100
-  runtimeBaseValue: 100
+  Value: 50
+  baseValue: 50
+  runtimeBaseValue: 50
   isState: 1
   Modifiers: []
   defence: {fileID: 0}

@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f0b4fa4e6a5ec54cb85bd8aa1f9899d, type: 3}
-  m_Name: Boss attack
+  m_Script: {fileID: 11500000, guid: ec8158e19c14e7d4e9293f6f8c5d37bc, type: 3}
+  m_Name: Woodland Boss room
   m_EditorClassIdentifier: 
-  Value: 7
-  baseValue: 7
-  runtimeBaseValue: 7
-  isState: 0
-  Modifiers: []
+  Room: {fileID: 7111237881613403697, guid: 649c1154df200fd4db5eed16559fb27e, type: 3}
+  Name: BossRoom

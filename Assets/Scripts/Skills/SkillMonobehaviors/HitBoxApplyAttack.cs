@@ -18,7 +18,6 @@ public class HitBoxApplyAttack : MonoBehaviour
         }
     }
 
-   
 
     private void ApplyDamage(StatHolder enemyStatHolder)
     {
