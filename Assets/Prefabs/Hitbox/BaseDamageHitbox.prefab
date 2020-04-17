@@ -75,7 +75,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: {fileID: 0}
-  tags: []
+  tags:
+  - 
   audioSource: {fileID: 1203602133859378623}
 --- !u!114 &7293761917032712783
 MonoBehaviour:

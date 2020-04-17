@@ -12,6 +12,7 @@ TagManager:
   - RightDoor
   - Enemy
   - Soundplayer
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -57,4 +58,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 4169899805
+    locked: 0
+  - name: Boss
+    uniqueID: 2141088823
     locked: 0

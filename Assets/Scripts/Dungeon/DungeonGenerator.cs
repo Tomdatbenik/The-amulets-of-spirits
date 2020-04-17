@@ -36,14 +36,14 @@ public class DungeonGenerator : MonoBehaviour
         grid.spaces[grid.spaces.Count - 1].dungeonRoom = Instantiate(BossRoom);
 
 
-        foreach (GridSpace space in grid.spaces)
-        {
-            SpawnRoom(space);
+        //foreach (GridSpace space in grid.spaces)
+        //{
+        //    SpawnRoom(space);
 
-            space.dungeonRoom.Room.transform.position = new Vector2(space.position.x * SpaceBetweenRooms, space.position.y * SpaceBetweenRooms);
-        }
+        //    space.dungeonRoom.Room.transform.position = new Vector2(space.position.x * SpaceBetweenRooms, space.position.y * SpaceBetweenRooms);
+        //}
 
-        SpawnDoors();
+        //SpawnDoors();
     }
 
     private void SpawnRoom(GridSpace space)
@@ -59,19 +59,19 @@ public class DungeonGenerator : MonoBehaviour
     private void Update()
     {
 
-        //if (index != grid.spaces.Count)
-        //{
-        //    GridSpace gridSpace = grid.spaces[index];
+        if (index != grid.spaces.Count)
+        {
+            GridSpace gridSpace = grid.spaces[index];
 
-        //    SpawnRoom(gridSpace);
+            SpawnRoom(gridSpace);
 
-        //    index++;
-        //}
-        //else if (index == grid.spaces.Count && !DoorSpawned)
-        //{
-        //    DoorSpawned = true;
-        //    SpawnDoors();
-        //}
+            index++;
+        }
+        else if (index == grid.spaces.Count && !DoorSpawned)
+        {
+            DoorSpawned = true;
+            SpawnDoors();
+        }
 
     }
 

@@ -31,9 +31,17 @@ public class StatHolder : MonoBehaviour
         if(health.Value == 0)
         {
             GameObject gameObject = GameObject.FindGameObjectWithTag("Soundplayer");
-            AudioSource deathsource = gameObject.GetComponent<AudioSource>();
-            deathsource.clip = health.DeathSound;
-            deathsource.Play();
+            if(gameObject != null)
+            {
+                AudioSource deathsource = gameObject.GetComponent<AudioSource>();
+                if (deathsource != null)
+                {
+                    deathsource.clip = health.DeathSound;
+                    deathsource.Play();
+                }
+            }
+          
+  
             Destroy(this.gameObject);
         }
     }
