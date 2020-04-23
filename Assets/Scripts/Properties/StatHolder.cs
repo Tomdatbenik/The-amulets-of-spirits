@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StatHolder : MonoBehaviour
 {
@@ -30,14 +31,19 @@ public class StatHolder : MonoBehaviour
 
         if(health.Value == 0)
         {
-            GameObject gameObject = GameObject.FindGameObjectWithTag("Soundplayer");
-            if(gameObject != null)
+            GameObject SoundgameObject = GameObject.FindGameObjectWithTag("Soundplayer");
+            if(SoundgameObject != null)
             {
-                AudioSource deathsource = gameObject.GetComponent<AudioSource>();
+                AudioSource deathsource = SoundgameObject.GetComponent<AudioSource>();
                 if (deathsource != null)
                 {
                     deathsource.clip = health.DeathSound;
                     deathsource.Play();
+                }
+
+                if(this.gameObject.tag == "Player")
+                {
+                    SceneManager.LoadScene(2);
                 }
             }
           

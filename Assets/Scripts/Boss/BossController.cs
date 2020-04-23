@@ -31,6 +31,8 @@ public class BossController : MonoBehaviour
 
     bool punching = false;
 
+    Health bosshealth;
+
     private void Start()
     {
         statholder = Body.GetComponent<StatHolder>();
@@ -38,6 +40,7 @@ public class BossController : MonoBehaviour
         handsAnimator = Hands.GetComponent<Animator>();
 
         Attack attack = statholder.FindPropertyByName("Attack") as Attack;
+        bosshealth = statholder.FindPropertyByName("Health") as Health;
 
         GameObject Player = GameObject.FindGameObjectWithTag("Player");
         Defence defence = Player.GetComponent<StatHolder>().FindPropertyByName("Defence") as Defence;
@@ -46,15 +49,23 @@ public class BossController : MonoBehaviour
 
     private void Update()
     {
-        if(canAttack)
+        if(!bosshealth.Dead)
         {
-            GetAvailebleAttacks();
-            Attack();
-        }
+            if (canAttack)
+            {
+                GetAvailebleAttacks();
+                Attack();
+            }
 
-        if(punching)
+            if (punching)
+            {
+                Punch();
+            }
+        }
+        else
         {
-            Punch();
+            RightHand.SetActive(false);
+            LeftHand.SetActive(false);
         }
     }
 
@@ -150,36 +161,39 @@ public class BossController : MonoBehaviour
 
     private void Punch()
     {
-        if(!punching)
+        if(RightHand != null && LeftHand != null)
         {
-            StartCoroutine(AwaitAttackCooldown());
-            StartCoroutine(AwaitPunch());
-            startMarkerRightHand = new Vector2(RightHand.transform.position.x , RightHand.transform.position.y);
-            startMarkerLeftHand = new Vector2(LeftHand.transform.position.x, LeftHand.transform.position.y);
-
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            if(player != null)
+            if (!punching)
             {
-                LefthandendMarker = new Vector2(player.transform.position.x -1f, player.transform.position.y);
-                RightHandendMarker = new Vector2(player.transform.position.x +1f, player.transform.position.y);
-                startTime = Time.time;
+                StartCoroutine(AwaitAttackCooldown());
+                StartCoroutine(AwaitPunch());
+                startMarkerRightHand = new Vector2(RightHand.transform.position.x, RightHand.transform.position.y);
+                startMarkerLeftHand = new Vector2(LeftHand.transform.position.x, LeftHand.transform.position.y);
 
-                // Calculate the journey length.
-                journeyLengthLefthand = Vector3.Distance(startMarkerLeftHand, LefthandendMarker);
-                journeyLengthRighthand = Vector3.Distance(startMarkerRightHand, RightHandendMarker);
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                if (player != null)
+                {
+                    LefthandendMarker = new Vector2(player.transform.position.x - 1f, player.transform.position.y);
+                    RightHandendMarker = new Vector2(player.transform.position.x + 1f, player.transform.position.y);
+                    startTime = Time.time;
+
+                    // Calculate the journey length.
+                    journeyLengthLefthand = Vector3.Distance(startMarkerLeftHand, LefthandendMarker);
+                    journeyLengthRighthand = Vector3.Distance(startMarkerRightHand, RightHandendMarker);
+                }
             }
+
+            // Distance moved equals elapsed time times speed..
+            float distCovered = (Time.time - startTime) * HandSpeed;
+
+            // Fraction of journey completed equals current distance divided by total distance.
+            float fractionOfJourneyRightHand = distCovered / journeyLengthRighthand;
+            float fractionOfJourneyLeftHand = distCovered / journeyLengthLefthand;
+
+            // Set our position as a fraction of the distance between the markers.
+            RightHand.transform.position = Vector2.Lerp(startMarkerRightHand, LefthandendMarker, fractionOfJourneyRightHand);
+            LeftHand.transform.position = Vector2.Lerp(startMarkerLeftHand, RightHandendMarker, fractionOfJourneyLeftHand);
         }
-
-        // Distance moved equals elapsed time times speed..
-        float distCovered = (Time.time - startTime) * HandSpeed;
-
-        // Fraction of journey completed equals current distance divided by total distance.
-        float fractionOfJourneyRightHand = distCovered / journeyLengthRighthand;
-        float fractionOfJourneyLeftHand = distCovered / journeyLengthLefthand;
-
-        // Set our position as a fraction of the distance between the markers.
-        RightHand.transform.position = Vector2.Lerp(startMarkerRightHand, LefthandendMarker, fractionOfJourneyRightHand);
-        LeftHand.transform.position = Vector2.Lerp(startMarkerLeftHand, RightHandendMarker, fractionOfJourneyLeftHand);
     }
 
     private IEnumerator AwaitPunch()
