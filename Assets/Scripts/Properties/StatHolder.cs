@@ -45,6 +45,11 @@ public class StatHolder : MonoBehaviour
                 {
                     SceneManager.LoadScene(2);
                 }
+
+                if (this.gameObject.tag == "Boss")
+                {
+                    SceneManager.LoadScene(3);
+                }
             }
           
   

@@ -19,4 +19,4 @@ MonoBehaviour:
   Modifiers: []
   defence: {fileID: 0}
   DeathSound: {fileID: 0}
-  Hurt: {fileID: 0}
+  Hurt: {fileID: 8300000, guid: 2358f9cdcbaac0f4780486743713f49a, type: 3}

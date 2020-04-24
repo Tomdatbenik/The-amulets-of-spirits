@@ -15,6 +15,7 @@ MonoBehaviour:
   ApplyToTags:
   - Enemy
   - Boss
+  - BossHand
   Caster: {fileID: 0}
   duration: 0.5
   TargetPosition: {x: 0, y: 0}
